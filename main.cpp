@@ -29,12 +29,20 @@ int main(int argc, char* argv[]) {
 	for (; ;) {
 	std::string name = mystr.substr(0, mystr.find('/'));
 	mystr.erase(0, mystr.find('/')+1);
+
+	try{
+	int len = stoi(mystr.substr(0, 13));
+	}
+	catch (...) {
+	return 0;
+	}
 	std::ofstream newout(name, std::ios::binary);
 	int len = stoi(mystr.substr(0, 13));
 	mystr.erase(0, 13);
 	newout << mystr.substr(0, len);
 	mystr.erase(0, len);
 	if (mystr.empty()) {
+		std::cout << "test";
 		break;
 	}
 	}
