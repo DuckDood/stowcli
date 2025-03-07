@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 	  // now i need to parse it
 	  // *sigh*
 	  // fucking HATE string manipulation
-	for (; ;) {
+	for (; !mystr.empty();) {
 	std::string name = mystr.substr(0, mystr.find('/'));
 	mystr.erase(0, mystr.find('/')+1);
 
